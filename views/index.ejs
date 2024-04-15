@@ -1,0 +1,34 @@
+<html lang='en'>
+
+<%- include('./partial/head.ejs') %>
+
+    <body>
+        <%- include('./partial/nav.ejs') %>
+            <div class="'blogs content">
+                <h2>all blogs</h2>
+                <% if (blogs.length > 0 ) {%>
+                    <% blogs.forEach(blog =>  {%>
+
+                        <a class="'single" href="/blogs/<%= blog._id %>">
+                            <h3 class="title">
+                                <%= blog.title %>
+                            </h3>
+
+
+                            <p class="dateCreate">
+                                <%= blog.updatedAt %>
+                            </p>
+                        </a>
+
+
+
+                        <% }) %>
+                            <% } else {%>
+                                <h2>No blogs</h2>
+                                <% } %>
+            </div>
+
+
+    </body>
+
+</html>
